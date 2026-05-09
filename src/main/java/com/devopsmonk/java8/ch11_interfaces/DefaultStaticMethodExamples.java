@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * Chapter 11 — Default and Static Interface Methods
- * Tutorial: https://devopsmonk.com/tutorials/java8/default-static-methods/
+ * Tutorial: https://devops-monk.com/tutorials/java8/default-static-methods/
  *
  * Covers:
  *  - Default methods: purpose, syntax, diamond problem resolution

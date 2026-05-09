@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 /**
  * Chapter 13 — CompletableFuture: Async Pipelines and Non-Blocking Composition
- * Tutorial: https://devopsmonk.com/tutorials/java8/completablefuture/
+ * Tutorial: https://devops-monk.com/tutorials/java8/completablefuture/
  *
  * Covers:
  *  - Creating: supplyAsync, runAsync, completedFuture

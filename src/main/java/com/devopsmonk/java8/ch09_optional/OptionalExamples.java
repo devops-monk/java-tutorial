@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 /**
  * Chapter 9 — Optional: Eliminating NullPointerException the Right Way
- * Tutorial: https://devopsmonk.com/tutorials/java8/optional/
+ * Tutorial: https://devops-monk.com/tutorials/java8/optional/
  *
  * Covers:
  *  - Creating Optional: of, ofNullable, empty

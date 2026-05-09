@@ -11,7 +11,7 @@ import java.util.stream.*;
 
 /**
  * Chapter 7 — Advanced Streams: flatMap, Collectors, Grouping, Partitioning
- * Tutorial: https://devopsmonk.com/tutorials/java8/streams-advanced/
+ * Tutorial: https://devops-monk.com/tutorials/java8/streams-advanced/
  *
  * Covers:
  *  - flatMap — flattening nested structures

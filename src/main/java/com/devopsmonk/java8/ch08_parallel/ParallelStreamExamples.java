@@ -8,7 +8,7 @@ import java.util.stream.*;
 
 /**
  * Chapter 8 — Parallel Streams
- * Tutorial: https://devopsmonk.com/tutorials/java8/parallel-streams/
+ * Tutorial: https://devops-monk.com/tutorials/java8/parallel-streams/
  *
  * Covers:
  *  - How parallel streams use ForkJoinPool.commonPool()

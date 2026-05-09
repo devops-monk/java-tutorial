@@ -7,8 +7,8 @@ group = 'com.devopsmonk'
 version = '1.0.0'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 repositories {
@@ -28,7 +28,7 @@ application {
     mainClass = project.findProperty('mainClass') ?: 'com.devopsmonk.java8.ch03_lambdas.LambdaExamples'
 }
 
-// Convenience tasks — one per chapter
+// Java 8 chapters
 ['ch03_lambdas.LambdaExamples',
  'ch04_functional.FunctionalInterfaceExamples',
  'ch05_methodrefs.MethodReferenceExamples',
@@ -46,9 +46,34 @@ application {
 ].each { cls ->
     def taskName = 'run' + cls.split('\\.')[1]
     tasks.register(taskName, JavaExec) {
-        group = 'java8-tutorial'
-        description = "Run ${cls}"
+        group = 'java8'
+        description = "Run Java 8 ${cls}"
         classpath = sourceSets.main.runtimeClasspath
         mainClass = "com.devopsmonk.java8.${cls}"
+    }
+}
+
+// Java 11 chapters
+['ch03_modules.ModuleSystemExamples',
+ 'ch04_var.VarKeywordExamples',
+ 'ch05_strings.StringMethodExamples',
+ 'ch06_collections.CollectionFactoryExamples',
+ 'ch07_streams.StreamOptionalExamples',
+ 'ch08_files.FilesIoExamples',
+ 'ch09_http.HttpClientExamples',
+ 'ch10_tooling.ToolingExamples',
+ 'ch11_gc.GarbageCollectionExamples',
+ 'ch12_jfr.FlightRecorderExamples',
+ 'ch13_security.SecurityExamples',
+ 'ch14_removed.RemovedApisExamples',
+ 'ch15_migration.MigrationGuideExamples',
+ 'ch16_bestpractices.Java11BestPracticesExamples'
+].each { cls ->
+    def taskName = 'run11' + cls.split('\\.')[1]
+    tasks.register(taskName, JavaExec) {
+        group = 'java11'
+        description = "Run Java 11 ${cls}"
+        classpath = sourceSets.main.runtimeClasspath
+        mainClass = "com.devopsmonk.java11.${cls}"
     }
 }

@@ -8,7 +8,7 @@ import java.util.stream.*;
 
 /**
  * Chapter 6 — Streams API: Introduction
- * Tutorial: https://devopsmonk.com/tutorials/java8/streams-introduction/
+ * Tutorial: https://devops-monk.com/tutorials/java8/streams-introduction/
  *
  * Covers:
  *  - Creating streams (from collections, arrays, of(), range, iterate, generate)

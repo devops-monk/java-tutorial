@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 /**
  * Chapter 5 — Method References
- * Tutorial: https://devopsmonk.com/tutorials/java8/method-references/
+ * Tutorial: https://devops-monk.com/tutorials/java8/method-references/
  *
  * The four kinds:
  *  1. Static method reference:          ClassName::staticMethod

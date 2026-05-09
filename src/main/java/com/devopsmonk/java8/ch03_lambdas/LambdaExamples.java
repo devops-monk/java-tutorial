@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 
 /**
  * Chapter 3 — Lambda Expressions
- * Tutorial: https://devopsmonk.com/tutorials/java8/lambdas/
+ * Tutorial: https://devops-monk.com/tutorials/java8/lambdas/
  *
  * Covers:
  *  - Lambda syntax (no params, one param, multiple params, block body)

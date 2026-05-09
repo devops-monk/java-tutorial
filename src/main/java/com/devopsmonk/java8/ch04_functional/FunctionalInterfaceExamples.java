@@ -9,7 +9,7 @@ import java.util.function.*;
 
 /**
  * Chapter 4 — Functional Interfaces
- * Tutorial: https://devopsmonk.com/tutorials/java8/functional-interfaces/
+ * Tutorial: https://devops-monk.com/tutorials/java8/functional-interfaces/
  *
  * Covers:
  *  - @FunctionalInterface contract

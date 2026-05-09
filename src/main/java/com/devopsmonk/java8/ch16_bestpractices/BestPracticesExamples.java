@@ -12,7 +12,7 @@ import java.util.stream.*;
 
 /**
  * Chapter 16 — Java 8 Best Practices and Patterns for Production Code
- * Tutorial: https://devopsmonk.com/tutorials/java8/best-practices/
+ * Tutorial: https://devops-monk.com/tutorials/java8/best-practices/
  *
  * Each section shows a BEFORE (Java 7 / bad habit) and an AFTER (idiomatic Java 8),
  * with commentary on why the Java 8 version is better.

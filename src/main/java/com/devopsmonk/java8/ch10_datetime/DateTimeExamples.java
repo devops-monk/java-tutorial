@@ -12,7 +12,7 @@ import java.util.Locale;
 
 /**
  * Chapter 10 — Date and Time API (JSR-310)
- * Tutorial: https://devopsmonk.com/tutorials/java8/date-time-api/
+ * Tutorial: https://devops-monk.com/tutorials/java8/date-time-api/
  *
  * Covers:
  *  - LocalDate, LocalTime, LocalDateTime — no timezone

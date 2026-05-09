@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * Chapter 12 — Collections and Map Enhancements
- * Tutorial: https://devopsmonk.com/tutorials/java8/collections-maps/
+ * Tutorial: https://devops-monk.com/tutorials/java8/collections-maps/
  *
  * Covers:
  *  - List/Collection: forEach, removeIf, replaceAll, sort

@@ -7,7 +7,7 @@ import java.util.concurrent.locks.StampedLock;
 
 /**
  * Chapter 14 — New APIs: Base64, StampedLock, LongAdder
- * Tutorial: https://devopsmonk.com/tutorials/java8/new-apis/
+ * Tutorial: https://devops-monk.com/tutorials/java8/new-apis/
  *
  * Covers:
  *  - java.util.Base64 — built-in encoder/decoder (basic, URL-safe, MIME)

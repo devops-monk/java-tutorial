@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 
 /**
  * Chapter 15 — JVM Improvements: Metaspace, Type Annotations, Repeated Annotations
- * Tutorial: https://devopsmonk.com/tutorials/java8/jvm-improvements/
+ * Tutorial: https://devops-monk.com/tutorials/java8/jvm-improvements/
  *
  * Covers:
  *  - PermGen removal and Metaspace (conceptual + configuration guidance)

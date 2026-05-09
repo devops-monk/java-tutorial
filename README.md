@@ -1,6 +1,6 @@
 # java-tutorial
 
-A growing companion project for the [DevOpsMonk Java Tutorial series](https://devopsmonk.com/tutorials/).
+A growing companion project for the [DevOpsMonk Java Tutorial series](https://devops-monk.com/tutorials/).
 Currently covers **Java 8** in depth — Java 11, 17, and 21 chapters coming soon.
 
 Every chapter in the tutorial has a matching runnable class here.  
@@ -95,16 +95,16 @@ Or run any class directly:
 
 | Chapter | Topic | Code |
 |---------|-------|------|
-| 3 | [Lambda Expressions](https://devopsmonk.com/tutorials/java8/lambdas/) | `ch03_lambdas/` |
-| 4 | [Functional Interfaces](https://devopsmonk.com/tutorials/java8/functional-interfaces/) | `ch04_functional/` |
-| 5 | [Method References](https://devopsmonk.com/tutorials/java8/method-references/) | `ch05_methodrefs/` |
-| 6 | [Streams Introduction](https://devopsmonk.com/tutorials/java8/streams-introduction/) | `ch06_streams/` |
-| 7 | [Advanced Streams](https://devopsmonk.com/tutorials/java8/streams-advanced/) | `ch07_streams_advanced/` |
-| 8 | [Parallel Streams](https://devopsmonk.com/tutorials/java8/parallel-streams/) | `ch08_parallel/` |
-| 9 | [Optional](https://devopsmonk.com/tutorials/java8/optional/) | `ch09_optional/` |
-| 10 | [Date and Time API](https://devopsmonk.com/tutorials/java8/date-time-api/) | `ch10_datetime/` |
-| 11 | [Default & Static Methods](https://devopsmonk.com/tutorials/java8/default-static-methods/) | `ch11_interfaces/` |
-| 12 | [Collections & Maps](https://devopsmonk.com/tutorials/java8/collections-maps/) | `ch12_collections/` |
-| 13 | [CompletableFuture](https://devopsmonk.com/tutorials/java8/completablefuture/) | `ch13_async/` |
-| 14 | [New APIs](https://devopsmonk.com/tutorials/java8/new-apis/) | `ch14_newapis/` |
-| 16 | [Best Practices](https://devopsmonk.com/tutorials/java8/best-practices/) | `ch16_bestpractices/` |
+| 3 | [Lambda Expressions](https://devops-monk.com/tutorials/java8/lambdas/) | `ch03_lambdas/` |
+| 4 | [Functional Interfaces](https://devops-monk.com/tutorials/java8/functional-interfaces/) | `ch04_functional/` |
+| 5 | [Method References](https://devops-monk.com/tutorials/java8/method-references/) | `ch05_methodrefs/` |
+| 6 | [Streams Introduction](https://devops-monk.com/tutorials/java8/streams-introduction/) | `ch06_streams/` |
+| 7 | [Advanced Streams](https://devops-monk.com/tutorials/java8/streams-advanced/) | `ch07_streams_advanced/` |
+| 8 | [Parallel Streams](https://devops-monk.com/tutorials/java8/parallel-streams/) | `ch08_parallel/` |
+| 9 | [Optional](https://devops-monk.com/tutorials/java8/optional/) | `ch09_optional/` |
+| 10 | [Date and Time API](https://devops-monk.com/tutorials/java8/date-time-api/) | `ch10_datetime/` |
+| 11 | [Default & Static Methods](https://devops-monk.com/tutorials/java8/default-static-methods/) | `ch11_interfaces/` |
+| 12 | [Collections & Maps](https://devops-monk.com/tutorials/java8/collections-maps/) | `ch12_collections/` |
+| 13 | [CompletableFuture](https://devops-monk.com/tutorials/java8/completablefuture/) | `ch13_async/` |
+| 14 | [New APIs](https://devops-monk.com/tutorials/java8/new-apis/) | `ch14_newapis/` |
+| 16 | [Best Practices](https://devops-monk.com/tutorials/java8/best-practices/) | `ch16_bestpractices/` |
