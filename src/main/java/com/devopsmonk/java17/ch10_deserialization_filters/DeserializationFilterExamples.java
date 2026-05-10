@@ -120,41 +120,41 @@ public class DeserializationFilterExamples {
     }
 
     // ── 3. Filter factory — different filters per deserialization context ─────
+    //
+    // NOTE: setSerialFilterFactory() can only be called ONCE per JVM lifetime.
+    // The built-in factory is already installed at JVM startup, so calling it
+    // programmatically in a demo throws IllegalStateException.
+    //
+    // In production, set it via the system property at startup instead:
+    //   -Djdk.serialFilterFactory=com.example.MyFilterFactory
+    //
+    // The equivalent composed-filter logic is demonstrated below.
     static void filterFactory() throws Exception {
         System.out.println("\n=== Filter Factory (JEP 415 core feature) ===");
+        System.out.println("(setSerialFilterFactory must be set at JVM startup via");
+        System.out.println(" -Djdk.serialFilterFactory=<class> or called before any");
+        System.out.println(" ObjectInputStream is created. Showing composed filter instead.)");
 
-        // The filter factory is called each time ObjectInputStream is created.
-        // It receives the current filter and the stream filter, and returns the merged filter.
-        // This simulates the JVM-wide filter factory pattern.
+        // ── What the factory would produce: resource-limit + allowlist composed ──
+        ObjectInputFilter resourceLimit = info -> {
+            if (info.depth() > 10)       return Status.REJECTED;
+            if (info.references() > 500) return Status.REJECTED;
+            return Status.UNDECIDED;
+        };
 
-        ObjectInputFilter.Config.setSerialFilterFactory((currentFilter, streamFilter) -> {
-            // Always apply a resource limit regardless of per-stream filter
-            ObjectInputFilter resourceLimit = info -> {
-                if (info.depth() > 10)        return Status.REJECTED;
-                if (info.references() > 500)  return Status.REJECTED;
-                return Status.UNDECIDED;  // let the stream filter decide
-            };
-
-            // Merge: resource limit takes precedence, then stream filter
-            if (streamFilter != null) {
-                return info -> {
-                    Status resourceStatus = resourceLimit.checkInput(info);
-                    if (resourceStatus == Status.REJECTED) return Status.REJECTED;
-                    return streamFilter.checkInput(info);
-                };
-            }
-            return resourceLimit;
-        });
-
-        System.out.println("Filter factory set — applies resource limits to all streams");
-
-        // Now any ObjectInputStream will have the resource limit applied
-        byte[] data = serialise(new UserPreferences("light", false, 12));
         ObjectInputFilter allowlist = Config.createFilter(
-            "com.devopsmonk.java17.ch10_deserialization_filters.*;!*");
+            "com.devopsmonk.java17.ch10_deserialization_filters.*;java.util.*;!*");
 
-        UserPreferences prefs = (UserPreferences) deserialise(data, allowlist);
-        System.out.println("Deserialised with factory + allowlist: " + prefs);
+        // Manually compose: resource limit is checked first, then allowlist
+        ObjectInputFilter composed = info -> {
+            Status s = resourceLimit.checkInput(info);
+            if (s == Status.REJECTED) return Status.REJECTED;
+            return allowlist.checkInput(info);
+        };
+
+        byte[] data = serialise(new UserPreferences("light", false, 12));
+        UserPreferences prefs = (UserPreferences) deserialise(data, composed);
+        System.out.println("Deserialised with composed (resource + allowlist) filter: " + prefs);
     }
 
     // ── 4. Logging filter — audit all deserialization ─────────────────────────
@@ -176,8 +176,9 @@ public class DeserializationFilterExamples {
         System.out.println("\n=== Audit / Logging Filter ===");
 
         byte[] data = serialise(new Order("ORD-002", 149.0, List.of("A", "B")));
+        // [* allows array types (e.g. [Ljava.lang.Object;) used internally by List.of
         ObjectInputFilter base = Config.createFilter(
-            "com.devopsmonk.java17.ch10_deserialization_filters.*;java.util.*;!*");
+            "com.devopsmonk.java17.ch10_deserialization_filters.*;java.util.*;java.lang.*;[*;!*");
 
         deserialise(data, loggingFilter(base));
     }
