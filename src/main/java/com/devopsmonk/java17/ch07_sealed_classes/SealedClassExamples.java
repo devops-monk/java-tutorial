@@ -73,7 +73,7 @@ public class SealedClassExamples {
 
     static double processingFee(PaymentMethod method, double amount) {
         return switch (method) {
-            case CreditCard cc when cc.network().equals("AMEX") -> amount * 0.035;
+            case CreditCard cc && cc.network().equals("AMEX") -> amount * 0.035;
             case CreditCard cc                                   -> amount * 0.015;
             case BankTransfer bt                                 -> 0.25;
             case Crypto c                                        -> amount * 0.005;
@@ -100,7 +100,7 @@ public class SealedClassExamples {
                 String.format("User %s registered with %s", e.userId(), e.email());
             case OrderPlaced e ->
                 String.format("Order %s placed by %s for £%.2f", e.orderId(), e.userId(), e.total());
-            case PaymentProcessed e when e.success() ->
+            case PaymentProcessed e && e.success() ->
                 String.format("Payment for order %s SUCCEEDED", e.orderId());
             case PaymentProcessed e ->
                 String.format("Payment for order %s FAILED", e.orderId());
